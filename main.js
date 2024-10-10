@@ -23,7 +23,7 @@ export function renderAmiiboList(amiibos) {
     const amiiboItem = document.createElement('div');
     amiiboItem.className = 'amiibo-item';
     amiiboItem.innerHTML = `
-      <h3>${amiibo.name}</h3>
+      <h2>${amiibo.name}</h2>
       <img src="${amiibo.image}" alt="${amiibo.name}" class="amiibo-image">
       <button class="read-more" data-head="${amiibo.head}" data-tail="${amiibo.tail}">Read More</button>
     `;
@@ -88,7 +88,7 @@ export function implementLiveSearch() {
     const amiiboItems = document.querySelectorAll('.amiibo-item');
 
     amiiboItems.forEach(item => {
-      const name = item.querySelector('h3').innerText.toLowerCase();
+      const name = item.querySelector('h2').innerText.toLowerCase();
       if (name.includes(searchTerm)) {
         item.style.display = '';
       } else {
