@@ -1,8 +1,6 @@
 // Import functions for easier testing with Jest
 import { fetchAmiibos } from './api.js';
 
-const listView = document.getElementById('listView');
-const detailsView = document.getElementById('detailsView');
 const searchInput = document.getElementById('searchInput');
 
 // Step 1: Fetch Amiibo List
@@ -17,6 +15,9 @@ export async function fetchAndRenderAmiibos() {
 
 // Step 2: Render List of Amiibos
 export function renderAmiiboList(amiibos) {
+  // Decleared in the function for Jest's sake
+  const listView = document.getElementById('listView'); 
+
   listView.innerHTML = ''; // Clear existing content
   listView.classList.add('amiibo-grid');
   amiibos.forEach(amiibo => {
@@ -58,6 +59,10 @@ export async function fetchAndRenderAmiiboDetails(amiiboId) {
 
 // Step 4: Render Amiibo Details
 export function renderAmiiboDetails(amiibo) {
+  // Decleared in the function for Jest's sake
+  const detailsView = document.getElementById('detailsView');
+  const listView = document.getElementById('listView');
+
   if (!amiibo) {
     console.error('Amiibo details are undefined');
     return;
