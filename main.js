@@ -9,7 +9,7 @@ export async function fetchAndRenderAmiibos() {
     const amiibos = await fetchAmiibos('https://www.amiiboapi.com/api/amiibo/');
     renderAmiiboList(amiibos);
   } catch (error) {
-    console.error('Error fetching Amiibos:', error);
+    console.error('Error fetching Amiibos:', error.message);
   }
 }
 
@@ -53,7 +53,7 @@ export async function fetchAndRenderAmiiboDetails(amiiboId) {
       console.error('No details found for the specified Amiibo ID');
     }
   } catch (error) {
-    console.error('Error fetching Amiibo details:', error);
+    console.error('Error fetching Amiibo details:', error.message);
   }
 }
 
